@@ -9,7 +9,11 @@ import { FaEthereum } from "react-icons/fa";
 import { CgMediaLive } from "react-icons/cg";
 import "./walletConnect.css";
 
-const WalletConnect = (): JSX.Element => {
+type WalletConnectProps = {
+  handleIsConnected: (status: boolean) => void;
+}
+
+const WalletConnect = ({ handleIsConnected }: WalletConnectProps): JSX.Element => {
   const { chainId, account, activate, active } = useWeb3React<Web3Provider>();
   const [myActiveNetwork, setMyActiveNetwork] = useState<NetworkChainType>({
     id: 0,
@@ -24,15 +28,16 @@ const WalletConnect = (): JSX.Element => {
     if (chainId) {
       const response = WalletNetworkName(chainId);
       setMyActiveNetwork(response);
+      handleIsConnected(true);
     }
-  }, [chainId]);
+  }, [chainId, handleIsConnected]);
 
   return (
     <>
       {active && chainId && account ? (
-        <Stack direction="vertical" gap={0} className="align-items-center">
+        <Stack direction="vertical" gap={0} className="align-items-center mb-3">
           <div>
-            <FaEthereum size={20} />
+            <FaEthereum size={40} />
           </div>
           <p className="font-monospace m-0">{`${account.substring(
             0,
@@ -45,9 +50,8 @@ const WalletConnect = (): JSX.Element => {
         </Stack>
       ) : (
         <Button
-          variant="outline-primary"
-          type="button"
-          size="sm"
+          variant="outline-primary font-monospace fw-bolder"
+          size="lg"
           onClick={onClick}
         >
           Connect Wallet
