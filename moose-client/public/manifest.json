@@ -5,7 +5,7 @@
     {
       "src": "MooseLogo.svg",
       "sizes": "any",
-      "type": "image/svg"
+      "type": "image/svg+xml"
     }
   ],
   "start_url": ".",
