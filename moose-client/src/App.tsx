@@ -1,6 +1,5 @@
-import { AlchemyProvider, Web3Provider } from "@ethersproject/providers";
+import { Web3Provider } from "@ethersproject/providers";
 import { useWeb3React, Web3ReactProvider } from "@web3-react/core";
-import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import LandingCover from "./components/landing/LandingCover";
 import BaseLayout from "./layout/BaseLayout";

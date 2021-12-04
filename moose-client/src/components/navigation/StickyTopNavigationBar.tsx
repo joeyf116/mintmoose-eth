@@ -2,9 +2,7 @@ import {
   Container,
   Nav,
   Navbar,
-  Image,
 } from "react-bootstrap";
-import MooseLogo from "../../assets/MooseLogo.svg";
 import { Link } from "react-router-dom";
 
 const StickyTopNavigationBar = (): JSX.Element => {
@@ -12,7 +10,6 @@ const StickyTopNavigationBar = (): JSX.Element => {
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Container fluid>
       <Navbar.Brand as={Link} to="/" className="font-monospace fw-bolder">
-              {/* <Image src={MooseLogo} height={60} width={60} /> */}
               MooseMint
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
