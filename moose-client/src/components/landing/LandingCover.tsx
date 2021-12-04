@@ -27,7 +27,7 @@ const LandingCover = (): JSX.Element => {
       </Row>
       <Row className="text-center">
         <Col xs={12} className="mt-0">
-          <Image src={MooseLogo} width={400} height={400} alt="Moose Logo" />
+          <Image src={MooseLogo} width={300} height={300} alt="Moose Logo" />
         </Col>
         <Col xs={12}>
           {!connected ? <WalletConnect handleIsConnected={handleIsConnected} /> : null}
