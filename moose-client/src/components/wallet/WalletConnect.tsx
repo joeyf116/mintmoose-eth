@@ -8,19 +8,26 @@ import WalletNetworkName from "./WalletNetworkName";
 import { FaEthereum } from "react-icons/fa";
 import { CgMediaLive } from "react-icons/cg";
 import "./walletConnect.css";
+import Web3 from "web3";
 
 type WalletConnectProps = {
   handleIsConnected: (status: boolean) => void;
-}
+};
 
-const WalletConnect = ({ handleIsConnected }: WalletConnectProps): JSX.Element => {
+const WalletConnect = ({
+  handleIsConnected,
+}: WalletConnectProps): JSX.Element => {
   const { chainId, account, activate, active } = useWeb3React<Web3Provider>();
   const [myActiveNetwork, setMyActiveNetwork] = useState<NetworkChainType>({
     id: 0,
     name: "No Network",
   });
+  const [connectorAvail, setConnecterAvail] = useState<boolean>(true);
 
   const onClick = () => {
+    if (!Web3.givenProvider) {
+      setConnecterAvail(false);
+    }
     activate(injectedTestNetworkWalletConnector);
   };
 
@@ -53,8 +60,9 @@ const WalletConnect = ({ handleIsConnected }: WalletConnectProps): JSX.Element =
           variant="outline-primary font-monospace fw-bolder"
           size="lg"
           onClick={onClick}
+          disabled={!connectorAvail}
         >
-          Connect Wallet
+          {connectorAvail ? "Connect Wallet" : "Log in to supported Browser"}
         </Button>
       )}
     </>
