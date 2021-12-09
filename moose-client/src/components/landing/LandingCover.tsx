@@ -1,4 +1,4 @@
-import MooseLogo from "../../assets/MooseLogo.svg";
+import MooseLogo from "../../assets/mintedLogo.svg";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import WalletConnect from "../wallet/WalletConnect";
 import { useWeb3React } from "@web3-react/core";
@@ -27,7 +27,7 @@ const LandingCover = (): JSX.Element => {
       </Row>
       <Row className="text-center">
         <Col xs={12} className="mt-0">
-          <Image src={MooseLogo} width={300} height={300} alt="Moose Logo" />
+          <Image src={MooseLogo} width={300} height={300} rounded alt="Moose Logo" />
         </Col>
         <Col xs={12}>
           {!connected ? <WalletConnect handleIsConnected={handleIsConnected} /> : null}

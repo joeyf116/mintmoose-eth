@@ -10,7 +10,7 @@ const StickyTopNavigationBar = (): JSX.Element => {
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Container fluid>
       <Navbar.Brand as={Link} to="/" className="font-monospace fw-bolder">
-              MooseMint
+              MintedMoose
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         </Container>

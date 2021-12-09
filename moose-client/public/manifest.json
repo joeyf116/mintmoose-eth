@@ -3,7 +3,7 @@
   "name": "MooseMint",
   "icons": [
     {
-      "src": "MooseLogo.svg",
+      "src": "mintedLogo.svg",
       "sizes": "any",
       "type": "image/svg+xml"
     }
